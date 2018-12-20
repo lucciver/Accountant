@@ -7,10 +7,10 @@
     <?php include("snippet/navbar.php"); ?>
 
     <div class="m-5" id="add">
-      <form action="form.php" method="post">
+      <form action="/form.php" method="post">
         <div class="form-group">
           <select name="friend" class="form-control">
-            <option :id="friend.id" v-for="friend in friends">{{friend.firstname}}</option>
+            <option :value="friend.id" name="friend" v-for="friend in friends">{{friend.firstname}}</option>
           </select>
         </div>
 
