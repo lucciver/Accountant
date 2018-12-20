@@ -15,7 +15,7 @@
         </div>
 
         <div class="form-group">
-          <input type="number" name="amount" placeholder="Amount" class="form-control">
+          <input type="number" step="0.01" name="amount" placeholder="Amount" class="form-control">
         </div>
 
         <div class="form-group">
