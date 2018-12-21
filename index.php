@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <?php include("snippet/head.php"); ?>
+  <?php include("assets/snippet/head.php"); ?>
 </head>
 <body>
-  <?php include("snippet/navbar.php"); ?>
+  <?php include("assets/snippet/navbar.php"); ?>
 
   <div class="m-5" id="overview">
     <div class="card my-3" v-for="(friend, index) in friends" v-if="friend.expenses.length > 0">
@@ -71,6 +71,6 @@
     </div>
   </div>
 
-  <?php include("snippet/footer.php"); ?>
+  <?php include("assets/snippet/footer.php"); ?>
 </body>
 </html>
