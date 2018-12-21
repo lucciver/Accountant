@@ -8,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $stmt->bindParam(':amount', $_POST['amount']);
       $stmt->bindParam(':id', $_POST['id']);
       $stmt->execute();
-      echo $stmt->debugDumpParams();
     } else {
       $stmt = $database->prepare("INSERT INTO `expenses` (`friend`, `amount`, `description`, `user`) VALUES (:friend, :amount, :description, :user)");
       $stmt->bindParam(':friend', $_POST['friend']);
@@ -16,17 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $stmt->bindParam(':amount', $_POST['amount']);
       $stmt->bindParam(':user', $i=0);
       $stmt->execute();
-      echo $stmt->debugDumpParams();
     }
   } elseif ($_POST['action'] == "person") {
     $stmt = $database->prepare("INSERT INTO `friends`(`firstname`, `lastname`) VALUES (:first, :last)");
     $stmt->bindParam(':first', $_POST['first']);
     $stmt->bindParam(':last', $_POST['last']);
     $stmt->execute();
-echo $stmt->debugDumpParams();
   }
 }
 
-// header('Location: /add.php');
-// exit;
+header('Location: /index.php');
+exit;
 ?>
