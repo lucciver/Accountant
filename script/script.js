@@ -10,7 +10,7 @@ new Vue({
   mounted: function() {
     var self = this;
 
-    jQuery.getJSON('/ajax/data.php', null, (friends) => {
+    jQuery.getJSON('/ajax/get.php', null, (friends) => {
       self.friends = friends;
     });
   },
