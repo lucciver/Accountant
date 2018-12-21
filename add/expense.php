@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <?php include("snippet/head.php"); ?>
+    <?php include("../snippet/head.php"); ?>
   </head>
   <body>
-    <?php include("snippet/navbar.php"); ?>
+    <?php include("../snippet/navbar.php"); ?>
 
     <div class="m-5" id="add">
       <form action="/ajax/set.php" method="post">
@@ -23,12 +23,13 @@
         </div>
 
         <div class="form-group">
+          <input type="hidden" name="action" value="expense">
           <input type="submit" class="btn btn-outline-primary btn-block" value="Add">
         </div>
       </form>
     </div>
 
 
-    <?php include("snippet/footer.php"); ?>
+    <?php include("../snippet/footer.php"); ?>
   </body>
 </html>

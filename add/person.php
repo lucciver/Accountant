@@ -17,6 +17,7 @@
         </div>
 
         <div class="form-group">
+          <input type="hidden" name="action" value="person">
           <input type="submit" class="btn btn-outline-primary btn-block" value="Add">
         </div>
       </form>

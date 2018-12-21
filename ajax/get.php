@@ -6,7 +6,7 @@
   $friends = $stmt->fetchAll();
 
   foreach ($friends as $key => $friend) {
-    $stmt = $database->prepare("SELECT `id`, `amount`, `description` FROM `expenses` WHERE `friend` = :id");
+    $stmt = $database->prepare("SELECT `id`, `amount`, `description` FROM `expenses` WHERE `friend` = :id AND `user` = 0");
     $stmt->bindParam(':id', $friend['id']);
     $stmt->execute();
     $result = $stmt->fetchAll();
