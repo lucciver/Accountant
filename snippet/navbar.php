@@ -9,8 +9,14 @@
       <li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == "index.php") echo "active"; ?>">
         <a class="nav-link" href="index.php">Overview</a>
       </li>
-      <li class="nav-item <?php if (basename($_SERVER['PHP_SELF']) == "add.php") echo "active"; ?>">
-        <a class="nav-link" href="add.php">Add</a>
+      <li class="nav-item dropdown <?php if (basename($_SERVER['PHP_SELF']) == "add.php") echo "active"; ?>">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Add
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/add/expense.php">Expense</a>
+          <a class="dropdown-item" href="/add/person.php">Person</a>
+        </div>
       </li>
     </ul>
   </div>
