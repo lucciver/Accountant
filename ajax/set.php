@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $database = require('config.php');
+  $database = require('../config.php');
 
   if (isset($_POST['id'])) {
     $stmt = $database->prepare("UPDATE `expenses` SET `amount` = :amount WHERE `id` = :id");
