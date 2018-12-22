@@ -6,6 +6,7 @@
 <script src="/assets/script/jquery.min.js"></script>
 <script src="/assets/script/popper.min.js"></script>
 <script src="/assets/script/bootstrap.min.js"></script>
+<script src="/assets/script/sweetalert.min.js"></script>
 
 <link rel="stylesheet" href="/assets/style/bootstrap.min.css">
 

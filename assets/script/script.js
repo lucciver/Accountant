@@ -27,7 +27,10 @@ $(document).ready(function() {
              data: form.serialize(), // serializes the form's elements.
              success: function(data) {
                  form.trigger("reset");
-                 alert("Succes");
+                 swal({
+                  title: "Changes have been saved",
+                  icon: "success",
+                });
              }
            });
 
