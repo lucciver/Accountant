@@ -7,7 +7,7 @@
     <?php include("../assets/snippet/navbar.php"); ?>
 
     <div class="m-5" id="add">
-      <form action="/ajax/set.php" method="post">
+      <form action="/ajax/set.php" id="form">
         <div class="form-group">
           <select name="friend" class="form-control">
             <option :value="friend.id" name="friend" v-for="friend in friends">{{friend.firstname}}</option>
@@ -28,7 +28,6 @@
         </div>
       </form>
     </div>
-
 
     <?php include("../assets/snippet/footer.php"); ?>
   </body>

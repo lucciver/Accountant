@@ -7,7 +7,7 @@
     <?php include("../assets/snippet/navbar.php"); ?>
 
     <div class="m-5" id="add">
-      <form action="/ajax/set.php" method="post">
+      <form action="/ajax/set.php" id="form">
         <div class="form-group">
           <input type="text" name="first" placeholder="First name" class="form-control">
         </div>
