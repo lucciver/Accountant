@@ -2,11 +2,13 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $database = require('../config.php');
 
-  $stmt = $database->prepare("DELETE FROM `expenses` WHERE `id` = :id");
-  $stmt->bindParam(':id', $_POST['id']);
-  $stmt->execute();
+  switch ($_POST['action']) {
+    case 'expense':
+      require("functions/delete/expense.php");
+      break;
+    case 'person':
+      require("functions/delete/person.php");
+      break;
+  }
 }
-
-header('Location: /index.php');
-exit;
 ?>
