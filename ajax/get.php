@@ -1,5 +1,5 @@
 <?php
-  $database = require('../config.php');
+  $database = require('../../config.php');
 
   $stmt = $database->prepare("SELECT `id`, `firstname`, `lastname` FROM `friends` WHERE 1");
   $stmt->execute();
