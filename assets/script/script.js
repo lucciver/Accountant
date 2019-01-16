@@ -1,4 +1,4 @@
-let element;
+var element;
 if ($("#overview").length) element = "#overview";
 else if ($("#add").length) element = "#add";
 
@@ -10,7 +10,7 @@ new Vue({
   mounted: function() {
     var self = this;
 
-    jQuery.getJSON('/ajax/get.php', null, (friends) => {
+    jQuery.getJSON('/ajax/get.php', null, function(friends) {
       self.friends = friends;
     });
   },
