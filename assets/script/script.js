@@ -17,23 +17,31 @@ new Vue({
 });
 
 $(document).ready(function() {
-  $("#form").submit(function(e) {
+  $("form").submit(function(e) {
       var form = $(this);
       var url = form.attr('action');
 
       $.ajax({
-             type: "POST",
-             url: url,
-             data: form.serialize(), // serializes the form's elements.
-             success: function(data) {
-                 form.trigger("reset");
-                 swal({
-                  title: "Changes have been saved",
-                  icon: "success",
-                });
-             }
-           });
+        type: "POST",
+        url: url,
+        data: form.serialize(), // serializes the form's elements.
+        success: function() {
+          Swal(
+            "Good news!",
+            "Changes have been save",
+            "success"
+          )
+        },
+        fail: function(){
+          Swal(
+            "Bad news!",
+            "Something went wrong",
+            "error"
+          )
+        }
+      });
 
+      form.trigger("reset");
       e.preventDefault(); // avoid to execute the actual submit of the form.
   });
 });
