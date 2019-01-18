@@ -14,6 +14,36 @@ new Vue({
       self.friends = friends;
     });
   },
+  methods: {
+    deleteExpense: function(friend_index, cost_index) {
+      var id = this.friends[friend_index].expenses[cost_index].id;
+      this.friends[friend_index].expenses.splice(cost_index, 1);
+
+      $.ajax({
+        method: "POST",
+        url: "ajax/delete.php",
+        data: {
+          action: "expense",
+          id: id
+        }
+      })
+    },
+
+    someHandler: function(friend_index, cost_index) {
+      var id = this.friends[friend_index].expenses[cost_index].id;
+      var amount = this.friends[friend_index].expenses[cost_index].amount;
+
+      $.ajax({
+        method: "POST",
+        url: "ajax/set.php",
+        data: {
+          action: "expense",
+          id: id,
+          amount: amount,
+        }
+      })
+    }
+  }
 });
 
 $(document).ready(function() {
