@@ -16,7 +16,7 @@
         </h5>
       </div>
 
-      <div :id="'collapsible' + friend_index" class="collapse show" data-parent="#overview">
+      <div :id="'collapsible' + friend_index" class="collapse" :class="{ 'show' : friend_index === 0 }" data-parent="#overview">
         <div class="card-body">
           <hr>
 
@@ -43,7 +43,7 @@
 
                     <div class="modal-body">
                       <div class="form-group mb-0 ">
-                        <input type="number" step="0.01" name="amount" placeholder="Amount" v-on:change="someHandler(friend_index, cost_index)" v-model="cost.amount" class="form-control">
+                        <input type="number" step="0.01" name="amount" placeholder="Amount" v-on:change="persist" v-model="cost.amount" class="form-control">
                       </div>
                     </div>
 
