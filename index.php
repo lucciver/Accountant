@@ -18,7 +18,7 @@
         </h5>
       </div>
 
-      <div :id="'collapsible' + friend_index" class="collapse" :class="{ 'show' : friend_index === 0 }" data-parent="#overview">
+      <div :id="'collapsible' + friend_index" class="collapse" data-parent="#overview">
         <div class="card-body">
           <hr>
 
