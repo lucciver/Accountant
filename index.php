@@ -7,7 +7,9 @@
   <?php include("assets/snippet/navbar.php"); ?>
 
   <div class="m-5" id="overview">
-    <div class="card my-3" v-for="(friend, friend_index) in friends" v-if="friend.expenses.length > 0">
+    <input class="form-control" type="text" v-model="search" placeholder="Search" aria-label="Search">
+
+    <div class="card my-3" v-for="(friend, friend_index) in filteredList" v-if="friend.expenses.length > 0">
       <div class="card-header">
         <h5 class="mb-0">
           <button class="btn btn-link" data-toggle="collapse" :data-target="'#collapsible' + friend_index" aria-expanded="true" :aria-controls="'collapsible' + friend_index">
@@ -43,7 +45,7 @@
 
                     <div class="modal-body">
                       <div class="form-group mb-0 ">
-                        <input type="number" step="0.01" name="amount" placeholder="Amount" v-on:change="persist" v-model="cost.amount" class="form-control">
+                        <input type="number" step="0.01" name="amount" placeholder="Amount" v-model="cost.amount" class="form-control">
                       </div>
                     </div>
 

@@ -5,6 +5,7 @@ else if ($("#add").length) element = "#add";
 new Vue({
   el: element,
   data: {
+    search: '',
     friends: []
   },
   mounted: function() {
@@ -42,6 +43,20 @@ new Vue({
           amount: amount,
         }
       })
+    }
+  },
+  computed: {
+    filteredList: function() {
+      var tempArray = [];
+
+      for (var i = 0; i < this.friends.length; i ++) {
+          var firstname = this.friends[i].firstname.toLowerCase();
+          var lastname = this.friends[i].lastname.toLowerCase();
+
+          if (firstname.includes(this.search.toLowerCase()) || lastname.includes(this.search.toLowerCase())) tempArray.push(this.friends[i]);
+      }
+
+      return tempArray;
     }
   }
 });
