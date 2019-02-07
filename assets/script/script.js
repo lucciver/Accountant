@@ -29,21 +29,6 @@ new Vue({
         }
       })
     },
-
-    someHandler: function(friend_index, cost_index) {
-      var id = this.friends[friend_index].expenses[cost_index].id;
-      var amount = this.friends[friend_index].expenses[cost_index].amount;
-
-      $.ajax({
-        method: "POST",
-        url: "ajax/set.php",
-        data: {
-          action: "expense",
-          id: id,
-          amount: amount,
-        }
-      })
-    }
   },
   computed: {
     filteredList: function() {
