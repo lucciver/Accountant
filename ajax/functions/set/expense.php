@@ -5,11 +5,10 @@ if (isset($_POST['id'])) {
   $stmt->bindParam(':id', $_POST['id']);
   $stmt->execute();
 } else {
-  $stmt = $conn->prepare("INSERT INTO `debt` (`friend`, `amount`, `description`, `user`) VALUES (:friend, :amount, :description, :user)");
+  $stmt = $conn->prepare("INSERT INTO `debt` (`friend`, `amount`, `description`) VALUES (:friend, :amount, :description)");
   $stmt->bindParam(':friend', $_POST['friend']);
   $stmt->bindParam(':description', $_POST['description']);
   $stmt->bindParam(':amount', $_POST['amount']);
-  $stmt->bindParam(':user', $i=3);
   $stmt->execute();
 }
 ?>
