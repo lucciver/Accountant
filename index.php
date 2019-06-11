@@ -29,7 +29,7 @@
 
             <!-- Price row with buttons -->
             <div class="float-right">
-              <button type="button" class="btn btn-outline-primary" data-toggle="modal" :data-target="'#modal' + cost.id">
+              <button type="button" class="btn btn-outline-primary">
                 {{ cost.amount }} &euro;
               </button>
 
@@ -37,21 +37,6 @@
             </div>
 
             <hr>
-
-            <!-- Modal -->
-            <div class="modal fade" :id="'modal' + cost.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-
-                    <div class="modal-body">
-                      <div class="form-group mb-0 ">
-                        <input type="number" step="0.01" name="amount" placeholder="Amount" v-model="cost.amount" class="form-control">
-                      </div>
-                    </div>
-
-                </div>
-              </div>
-            </div>
           </div>
 
         </div>
