@@ -16,6 +16,15 @@ new Vue({
     });
   },
   methods: {
+    getTotal: function(expenses) {
+      var tempTotal = 0;
+
+      for (var i = 0; i < expenses.length; i ++) {
+        tempTotal += parseFloat(expenses[i].amount);
+      }
+
+      return Math.round(tempTotal * 100) / 100;
+    },
     deleteExpense: function(friend_index, cost_index) {
       var id = this.friends[friend_index].expenses[cost_index].id;
       this.friends[friend_index].expenses.splice(cost_index, 1);

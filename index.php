@@ -15,6 +15,7 @@
           <button class="btn btn-link" data-toggle="collapse" :data-target="'#collapsible' + friend_index" aria-expanded="true" :aria-controls="'collapsible' + friend_index">
             {{ friend.firstname }} {{ friend.lastname }}
           </button>
+          <div style="float: right; padding: 8px 12px; font-size: 16px;">{{ getTotal(friend.expenses) }} &euro;</div>
         </h5>
       </div>
 
