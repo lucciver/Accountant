@@ -41,6 +41,7 @@ new Vue({
           if (firstname.includes(this.search.toLowerCase()) || lastname.includes(this.search.toLowerCase())) tempArray.push(this.friends[i]);
       }
 
+      $('.collapse').collapse('hide');
       return tempArray;
     }
   }
