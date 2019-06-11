@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  require('../../config.php');
+  require('../config.php');
 
   switch ($_POST['action']) {
     case 'expense':
